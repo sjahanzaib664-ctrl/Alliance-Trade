@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shehzada_Furnitures | Sofa Collection</title>
+<meta name="description" content="Shehzada_Furnitures sofa collection. Choose your sofa, colour and size, then send your order on WhatsApp.">
+<meta name="google-site-verification" content="A3_K0-f8RTkP6-2bLz7DLxkb4wglZPFGYXaS2N65X6Y" />
+<style>
+/* Layout: sticky brand bar, three views in one page (catalogue, booking details, confirm). Deep green + brass, dark-green in dark mode. */
+:root{
+  --bg:#F1F3F0; --surface:#FFFFFF; --fg:#16211C; --muted:#56655E; --line:#D8DDD8;
+  --accent:#0F4C3A; --accent-fg:#FFFFFF; --brass:#9A6F16; --soft:#E6ECE7; --danger:#A62B2B;
+  --display:"DM Serif Display",Georgia,serif; --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0F1613; --surface:#17211D; --fg:#E7EEE9; --muted:#9BAAA2; --line:#28372F;
+    --accent:#52B890; --accent-fg:#07150F; --brass:#D6A84B; --soft:#1E2B25; --danger:#F08A8A; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0F1613; --surface:#17211D; --fg:#E7EEE9; --muted:#9BAAA2; --line:#28372F;
+  --accent:#52B890; --accent-fg:#07150F; --brass:#D6A84B; --soft:#1E2B25; --danger:#F08A8A; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:16px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:1120px;margin:0 auto}
+header.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line);
+  display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:14px;flex-wrap:wrap}
+.brand{font-family:var(--display);font-size:1.5rem;letter-spacing:.01em;color:var(--fg);text-decoration:none;line-height:1.1}
+.brand small{display:block;font-family:var(--body);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin-top:3px}
+.steps{display:flex;gap:6px;font-size:.78rem;color:var(--muted);align-items:center;flex-wrap:wrap}
+.steps span{padding:4px 10px;border:1px solid var(--line);border-radius:999px}
+.steps span.on{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.acc{font-size:.85rem;font-weight:600;color:var(--accent);border:1px solid var(--accent);border-radius:999px;padding:6px 14px;text-decoration:none;white-space:nowrap}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0}
+h1{font-size:clamp(2rem,5.5vw,3.2rem);line-height:1.08}
+h2{font-size:1.7rem;line-height:1.15}
+.eyebrow{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);margin:0 0 10px}
+.hero{padding-block:36px 24px;max-width:46rem}
+.hero p.lead{color:var(--muted);margin:14px 0 0;max-width:40rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;padding-bottom:48px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card .pic{background:var(--soft);aspect-ratio:5/3;display:flex;align-items:center;justify-content:center;max-width:100%}
+.card .pic svg,.card .pic img{width:100%;height:100%;object-fit:contain}
+.card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:4px;flex:1}
+.card h3{font-size:1.15rem}
+.tag{font-size:.8rem;color:var(--muted)}
+.btn{appearance:none;border:0;cursor:pointer;font:inherit;font-weight:600;background:var(--accent);color:var(--accent-fg);
+  padding:12px 20px;border-radius:8px;text-align:center;text-decoration:none;display:inline-block;min-height:46px}
+.btn:hover{filter:brightness(1.08)}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line)}
+.btn.block{width:100%}
+.card .btn{margin-top:12px}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.layout{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:32px;padding-block:28px 56px;align-items:start}
+.preview{position:sticky;top:96px;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.preview .pic{background:var(--soft);aspect-ratio:5/3;max-width:100%}
+.preview .pic svg,.preview .pic img{width:100%;height:100%;object-fit:contain}
+.preview .meta{padding:14px 16px}
+.preview .meta h2{font-size:1.4rem}
+.back{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:6px 0;text-decoration:underline;text-underline-offset:3px}
+form.panel{display:flex;flex-direction:column;gap:22px;min-width:0}
+fieldset{border:0;padding:0;margin:0;min-width:0}
+legend,.lab{font-weight:600;margin-bottom:8px;padding:0;display:block}
+.hint{font-size:.85rem;color:var(--muted);font-weight:400}
+.swatches{display:flex;flex-wrap:wrap;gap:10px}
+.sw{position:relative;cursor:pointer}
+.sw input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.sw .chip{display:flex;align-items:center;gap:8px;border:2px solid var(--line);border-radius:999px;padding:5px 12px 5px 6px;background:var(--surface);font-size:.88rem}
+.sw .dot{width:22px;height:22px;border-radius:50%;border:1px solid rgba(128,128,128,.5)}
+.sw input:checked + .chip{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.sw input:focus-visible + .chip{outline:3px solid var(--brass);outline-offset:2px}
+input[type=text],input[type=tel],input[type=email],input[type=number],select,textarea{
+  width:100%;font:inherit;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-height:46px}
+textarea{min-height:104px;resize:vertical}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.stepper button{width:46px;height:46px;border:0;background:var(--soft);color:var(--fg);font-size:1.3rem;cursor:pointer}
+.stepper input{width:64px;text-align:center;border:0;border-radius:0;min-height:46px}
+.err{color:var(--danger);font-size:.88rem;margin-top:6px;min-height:1.2em}
+.summary{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.summary dl{display:grid;grid-template-columns:max-content 1fr;gap:8px 18px;margin:0}
+.summary dt{color:var(--muted)}
+.summary dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.note{background:var(--soft);border-left:4px solid var(--brass);padding:12px 14px;border-radius:6px;font-size:.95rem;margin:0}
+.narrow{max-width:640px;margin:0 auto;padding-block:28px 56px;display:flex;flex-direction:column;gap:22px}
+.done{text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px}
+.tick{width:64px;height:64px;border-radius:50%;background:var(--accent);color:var(--accent-fg);display:flex;align-items:center;justify-content:center}
+.actions{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.copybox{width:100%;font-size:.85rem;min-height:150px}
+footer{border-top:1px solid var(--line);padding-block:24px;color:var(--muted);font-size:.88rem}
+@media (max-width:820px){.layout{grid-template-columns:minmax(0,1fr)}.preview{position:static}}
+@media (max-width:480px){.steps{display:none}}
+@media (prefers-reduced-motion:no-preference){.card{transition:transform .15s ease}.card:hover{transform:translateY(-3px)}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display&display=swap">
+</head>
+<body>
+<div class="wrap">
+  <header class="bar">
+    <a class="brand" href="#home">Shehzada_Furnitures<small>Sofa Collection</small></a>
+    <div class="steps" id="steps" aria-hidden="true"></div>
+    <a class="acc" id="acc" href="#account">Create account</a>
+  </header>
+  <main id="app"></main>
+  <footer>Shehzada_Furnitures. Your sofa, in your colour and your size.</footer>
+</div>
+
+<script>
+// ---- Settings the shop owner edits ----
+// WhatsApp Business number in international format, digits only, e.g. "923001234567".
+var WA_NUMBER = "923712240109";
+
+// Each product can show your own photo: set img to a data: URI. Until then a drawn sofa in the chosen colour is shown.
+var PRODUCTS = [
+  {id:"velvet-chesterfield", name:"Velvet Chesterfield 3-Seater", seats:"3 Seater", color:"#7B1E2B", img:null, o:{w:300,tuft:true,rolled:true}},
+  {id:"royal-tufted", name:"Royal Tufted 5-Seater Set", seats:"5 Seater", color:"#1F3A5F", img:null, o:{w:340,tuft:true,rolled:true}},
+  {id:"modern-square", name:"Modern Square Arm Sofa", seats:"3 Seater", color:"#4A4F55", img:null, o:{w:310}},
+  {id:"corner-l", name:"L-Shape Corner Sofa", seats:"6 Seater", color:"#6B4429", img:null, o:{w:350,chaise:true}},
+  {id:"loveseat", name:"Classic Loveseat", seats:"2 Seater", color:"#1F6B52", img:null, o:{w:230,rolled:true,cush:2}},
+  {id:"lounge-sectional", name:"Lounge Sectional", seats:"5 Seater", color:"#CDB89A", img:null, o:{w:350,chaise:true}},
+  {id:"leather-chesterfield", name:"Leather Chesterfield", seats:"3 Seater", color:"#1B1B1D", img:null, o:{w:300,tuft:true,rolled:true}},
+  {id:"flared-arm", name:"Flared Arm Sofa", seats:"3 Seater", color:"#C9962B", img:null, o:{w:310,rolled:true}},
+  {id:"winter-velvet-love", name:"Winter Velvet Loveseat", seats:"2 Seater", color:"#1F6F78", img:null, o:{w:240,tuft:true,cush:2}},
+  {id:"fort-six", name:"Fort 6-Seater Sofa Set", seats:"6 Seater", color:"#C98B97", img:null, o:{w:360,tuft:true,rolled:true}}
+];
+var COLORS = [
+  {n:"Maroon",h:"#7B1E2B"},{n:"Navy Blue",h:"#1F3A5F"},{n:"Emerald Green",h:"#1F6B52"},{n:"Charcoal Grey",h:"#4A4F55"},
+  {n:"Black",h:"#1B1B1D"},{n:"Beige",h:"#CDB89A"},{n:"Brown",h:"#6B4429"},{n:"Mustard",h:"#C9962B"},
+  {n:"Teal",h:"#1F6F78"},{n:"Dusty Pink",h:"#C98B97"}
+];
+var SIZES = ["1 Seater","2 Seater","3 Seater","5 Seater (3+1+1)","6 Seater (3+2+1)","7 Seater (3+2+1+1)","L-Shape / Corner","Custom size"];
+
+// ---- Helpers ----
+var app = document.getElementById("app");
+var stepsEl = document.getElementById("steps");
+var order = null;
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function byId(id){return PRODUCTS.filter(function(p){return p.id===id;})[0];}
+function shade(hex,pct){
+  var n=parseInt(hex.slice(1),16),r=n>>16,g=(n>>8)&255,b=n&255,t=pct<0?0:255,p=Math.abs(pct)/100;
+  function f(c){return Math.round((t-c)*p+c);}
+  return "#"+((1<<24)+(f(r)<<16)+(f(g)<<8)+f(b)).toString(16).slice(1);
+}
+function sofaSVG(color,o){
+  o=Object.assign({w:300,tuft:false,rolled:false,cush:3,chaise:false},o||{});
+  var dk=shade(color,-32),md=shade(color,-14),lt=shade(color,12),w=o.w,x0=200-w/2,aw=44,ix=x0+aw,iw=w-2*aw,i,j;
+  var s='<svg viewBox="0 0 400 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sofa">';
+  s+='<ellipse cx="200" cy="222" rx="'+(w/2+6)+'" ry="8" fill="#000" opacity=".14"/>';
+  s+='<rect x="'+(ix-10)+'" y="44" width="'+(iw+20)+'" height="112" rx="26" fill="'+md+'"/>';
+  if(o.tuft){
+    var cols=Math.max(3,Math.floor(iw/38));
+    for(j=0;j<2;j++){for(i=0;i<cols;i++){
+      var cx=ix+((i+.5+(j?.5:0))*iw/cols);
+      if(cx<ix+iw-6){s+='<circle cx="'+cx.toFixed(1)+'" cy="'+(72+j*30)+'" r="3.2" fill="'+dk+'"/>';}
+    }}
+  }
+  s+='<rect x="'+(x0+6)+'" y="178" width="'+(w-12)+'" height="20" rx="6" fill="'+dk+'"/>';
+  var cw=iw/o.cush;
+  for(i=0;i<o.cush;i++){s+='<rect x="'+(ix+i*cw+1.5).toFixed(1)+'" y="130" width="'+(cw-3).toFixed(1)+'" height="54" rx="12" fill="'+color+'" stroke="'+dk+'" stroke-opacity=".35"/>';}
+  if(o.chaise){s+='<rect x="'+(x0+w-124)+'" y="152" width="124" height="46" rx="14" fill="'+lt+'" stroke="'+dk+'" stroke-opacity=".35"/>';}
+  var ar=o.rolled?22:8;
+  s+='<rect x="'+x0+'" y="92" width="'+aw+'" height="106" rx="'+ar+'" fill="'+lt+'" stroke="'+dk+'" stroke-opacity=".35"/>';
+  if(!o.chaise){s+='<rect x="'+(x0+w-aw)+'" y="92" width="'+aw+'" height="106" rx="'+ar+'" fill="'+lt+'" stroke="'+dk+'" stroke-opacity=".35"/>';}
+  s+='<rect x="'+(x0+16)+'" y="196" width="10" height="22" rx="2" fill="#2b1c12"/><rect x="'+(x0+w-26)+'" y="196" width="10" height="22" rx="2" fill="#2b1c12"/>';
+  return s+'</svg>';
+}
+function picFor(p,color){return p.img?'<img src="'+esc(p.img)+'" alt="'+esc(p.name)+'">':sofaSVG(color||p.color,p.o);}
+function setSteps(n){
+  var names=["1. Choose sofa","2. Details","3. Confirm"];
+  stepsEl.innerHTML=names.map(function(t,i){return '<span class="'+(i+1===n?"on":"")+'">'+t+'</span>';}).join("");
+}
+
+// ---- Views ----
+function viewHome(){
+  setSteps(1);
+  app.innerHTML='<section class="hero"><p class="eyebrow">Sofa Collection</p><h1>Choose the sofa for your home</h1>'+
+    '<p class="lead">Pick a sofa you like and press Book Now. Then tell us the colour, the size and what you need, and we will make it for you.</p></section>'+
+    '<section class="grid" aria-label="Sofa list">'+PRODUCTS.map(function(p){
+      return '<article class="card"><div class="pic">'+picFor(p)+'</div><div class="body"><h3>'+esc(p.name)+'</h3><span class="tag">'+esc(p.seats)+'</span>'+
+      '<a class="btn" href="#book-'+esc(p.id)+'">Book Now</a></div></article>';
+    }).join("")+'</section>';
+}
+
+function viewBook(id){
+  var p=byId(id); if(!p){location.hash="#home";return;}
+  setSteps(2);
+  var prev=(order&&order.pid===id)?order:{};
+  var curColor=prev.colorHex||p.color;
+  var sw=COLORS.map(function(c){
+    var chk=(prev.colorName?prev.colorName===c.n:c.h===p.color)?" checked":"";
+    return '<label class="sw"><input type="radio" name="color" value="'+esc(c.n)+'" data-hex="'+c.h+'"'+chk+'><span class="chip"><span class="dot" style="background:'+c.h+'"></span>'+esc(c.n)+'</span></label>';
+  }).join("");
+  var sizeOpts=SIZES.map(function(s){
+    var sel=(prev.size?prev.size===s:s===p.seats)?" selected":"";
+    return '<option'+sel+'>'+esc(s)+'</option>';
+  }).join("");
+  app.innerHTML='<div class="layout"><div><button class="back" type="button" id="back">&larr; Back to all sofas</button>'+
+    '<div class="preview" style="margin-top:10px"><div class="pic" id="pv">'+picFor(p,curColor)+'</div>'+
+    '<div class="meta"><p class="eyebrow" style="margin-bottom:4px">'+esc(p.seats)+'</p><h2>'+esc(p.name)+'</h2></div></div></div>'+
+    '<form class="panel" id="f1" novalidate>'+
+    '<div><p class="eyebrow">Order details</p><h2>Choose your sofa options</h2></div>'+
+    '<fieldset><legend>1. Sofa colour</legend><div class="swatches" role="radiogroup">'+sw+'</div>'+
+    '<label class="lab" for="oc" style="margin-top:12px"><span class="hint">Need another colour? Write it here (optional)</span></label>'+
+    '<input type="text" id="oc" value="'+esc(prev.otherColor||"")+'" placeholder="Example: Dark blue"></fieldset>'+
+    '<div><label class="lab" for="size">2. Sofa size</label><select id="size">'+sizeOpts+'</select>'+
+    '<label class="lab" for="sc" style="margin-top:12px"><span class="hint">Need a custom size? Write the length and width in feet</span></label>'+
+    '<input type="text" id="sc" value="'+esc(prev.sizeCustom||"")+'" placeholder="Example: 9 ft x 3 ft"></div>'+
+    '<div><label class="lab" for="qty">3. How many sofas do you need?</label><div class="stepper"><button type="button" id="qm" aria-label="Decrease quantity">&minus;</button>'+
+    '<input type="number" id="qty" min="1" max="50" value="'+(prev.qty||1)+'"><button type="button" id="qp" aria-label="Increase quantity">+</button></div></div>'+
+    '<div><label class="lab" for="want">4. What do you want in this sofa?</label><textarea id="want" placeholder="Example: Soft seat, strong wooden frame, extra cushions">'+esc(prev.want||"")+'</textarea></div>'+
+    '<div><label class="lab" for="no">5. What do you not want in this sofa?</label><textarea id="no" placeholder="Example: No buttons, no black legs">'+esc(prev.no||"")+'</textarea></div>'+
+    '<button class="btn block" type="submit">Continue</button></form></div>';
+  var f=document.getElementById("f1"),pv=document.getElementById("pv"),q=document.getElementById("qty");
+  document.getElementById("back").onclick=function(){location.hash="#home";};
+  f.addEventListener("change",function(e){
+    if(e.target.name==="color"&&!p.img){pv.innerHTML=sofaSVG(e.target.getAttribute("data-hex"),p.o);}
+  });
+  function clampQ(){var v=parseInt(q.value,10);if(isNaN(v)||v<1)v=1;if(v>50)v=50;q.value=v;return v;}
+  document.getElementById("qm").onclick=function(){q.value=clampQ()-1;clampQ();};
+  document.getElementById("qp").onclick=function(){q.value=clampQ()+1;clampQ();};
+  q.addEventListener("blur",clampQ);
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var c=f.querySelector('input[name="color"]:checked');
+    order={pid:p.id,pname:p.name,colorName:c?c.value:"",colorHex:c?c.getAttribute("data-hex"):p.color,
+      otherColor:document.getElementById("oc").value.trim(),size:document.getElementById("size").value,
+      sizeCustom:document.getElementById("sc").value.trim(),qty:clampQ(),
+      want:document.getElementById("want").value.trim(),no:document.getElementById("no").value.trim(),
+      phone:(order&&order.phone)||"",email:(order&&order.email)||"",address:(order&&order.address)||""};
+    location.hash="#confirm";
+  });
+}
+
+function summaryRows(o){
+  var colour=o.otherColor?(o.colorName+" / "+o.otherColor):o.colorName;
+  var size=o.sizeCustom?(o.size+" ("+o.sizeCustom+")"):o.size;
+  return [["Sofa",o.pname],["Colour",colour],["Size",size],["Quantity",o.qty],
+    ["Wanted",o.want||"Nothing specified"],["Not wanted",o.no||"Nothing specified"]];
+}
+function summaryHTML(o){return '<div class="summary"><dl>'+summaryRows(o).map(function(r){return '<dt>'+esc(r[0])+'</dt><dd>'+esc(r[1])+'</dd>';}).join("")+'</dl></div>';}
+function orderText(o){
+  var t="Shehzada_Furnitures - New Order\n\n"+summaryRows(o).map(function(r){return r[0]+": "+r[1];}).join("\n");
+  var pr=getProfile()||{};
+  return t+"\n\n"+(pr.name?"Name: "+pr.name+"\n":"")+"Phone: "+o.phone+"\nGmail: "+o.email+"\nHome address: "+o.address;
+}
+var NIGHT="If you order at night, our shop is closed and we will reply in the morning.";
+
+function viewConfirm(){
+  if(!order){location.hash="#home";return;}
+  setSteps(3);
+  app.innerHTML='<div class="narrow"><button class="back" type="button" id="back" style="align-self:flex-start">&larr; Change details</button>'+
+    '<div><p class="eyebrow">Last step</p><h2>Send your order</h2></div>'+summaryHTML(order)+
+    '<form class="panel" id="f2" novalidate>'+
+    '<div><label class="lab" for="ph">1. Phone number</label><input type="tel" id="ph" inputmode="tel" autocomplete="tel" value="'+esc(order.phone||(getProfile()||{}).phone||"")+'" placeholder="03XX XXXXXXX"><div class="err" id="e-ph"></div></div>'+
+    '<div><label class="lab" for="em">2. Gmail</label><input type="email" id="em" autocomplete="email" value="'+esc(order.email||(getProfile()||{}).email||"")+'" placeholder="you@gmail.com"><div class="err" id="e-em"></div></div>'+
+    '<div><label class="lab" for="ad">3. Home address</label><textarea id="ad" autocomplete="street-address" placeholder="House number, street, area, city">'+esc(order.address||(getProfile()||{}).address||"")+'</textarea><div class="err" id="e-ad"></div></div>'+
+    '<p class="note">Fill in your details and tap the button. Your order opens in WhatsApp, ready to send to us, and we will confirm it by message. '+NIGHT+'</p>'+
+    '<a class="btn block" id="wa" href="https://wa.me/'+esc(WA_NUMBER)+'" target="_blank" rel="noopener">Send order on WhatsApp</a></form></div>';
+  document.getElementById("back").onclick=function(){location.hash="#book-"+order.pid;};
+  document.getElementById("f2").addEventListener("submit",function(e){e.preventDefault();});
+  document.getElementById("wa").addEventListener("click",function(e){
+    var ph=document.getElementById("ph").value.trim(),em=document.getElementById("em").value.trim(),ad=document.getElementById("ad").value.trim(),ok=true;
+    function setE(id,m){document.getElementById(id).textContent=m;if(m)ok=false;}
+    setE("e-ph",ph.replace(/\D/g,"").length>=10?"":"Enter a valid phone number (at least 10 digits).");
+    setE("e-em",/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)?"":"Enter a valid Gmail address, for example you@gmail.com");
+    setE("e-ad",ad.length>=10?"":"Enter your full address so we can deliver the sofa.");
+    if(!ok){e.preventDefault();return;}
+    order.phone=ph;order.email=em;order.address=ad;
+    this.href='https://wa.me/'+WA_NUMBER+'?text='+encodeURIComponent(orderText(order));
+    setTimeout(function(){location.hash="#done";},700);
+  });
+}
+
+function viewDone(){
+  if(!order||!order.phone){location.hash="#home";return;}
+  setSteps(3);
+  var txt=orderText(order);
+  var wa=WA_NUMBER?'<a class="btn" href="https://wa.me/'+esc(WA_NUMBER)+'?text='+encodeURIComponent(txt)+'" target="_blank" rel="noopener">Send order on WhatsApp</a>':"";
+  var msg=WA_NUMBER?'If WhatsApp did not open, or you did not press Send there, tap &ldquo;Send order on WhatsApp&rdquo; again so your order reaches us. We will confirm it by message. '+NIGHT
+    :'Your order details are ready. Copy them and send them to us. '+NIGHT;
+  app.innerHTML='<div class="narrow"><div class="done"><div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>'+
+    '<h2>Thank you for your order</h2><p class="tag" style="margin:0">Your order details are below.</p></div>'+
+    summaryHTML(order)+
+    '<div class="summary"><dl><dt>Phone</dt><dd>'+esc(order.phone)+'</dd><dt>Gmail</dt><dd>'+esc(order.email)+'</dd><dt>Address</dt><dd>'+esc(order.address)+'</dd></dl></div>'+
+    '<p class="note">'+msg+'</p>'+
+    '<div class="actions">'+wa+'<button class="btn ghost" type="button" id="cp">Copy order details</button><a class="btn ghost" href="#home">See more sofas</a></div>'+
+    '<textarea class="copybox" id="cb" readonly hidden>'+esc(txt)+'</textarea></div>';
+  document.getElementById("cp").onclick=function(){
+    var b=document.getElementById("cp"),box=document.getElementById("cb");
+    function fb(){box.hidden=false;box.focus();box.select();b.textContent="Copy the text shown above";}
+    try{navigator.clipboard.writeText(txt).then(function(){b.textContent="Copied";},fb);}catch(e){fb();}
+  };
+}
+
+// ---- Account (saved on this device only) ----
+function getProfile(){try{return JSON.parse(localStorage.getItem("sf_profile")||"null");}catch(e){return null;}}
+function setProfile(p){try{if(p)localStorage.setItem("sf_profile",JSON.stringify(p));else localStorage.removeItem("sf_profile");return true;}catch(e){return false;}}
+function refreshAcc(){var a=document.getElementById("acc"),p=getProfile();a.textContent=(p&&p.name)?("Hi, "+p.name.split(" ")[0]):"Create account";}
+function viewAccount(){
+  setSteps(0);
+  var p=getProfile()||{};
+  function fld(id,label,type,val,ph,auto){return '<div><label class="lab" for="'+id+'">'+label+'</label><input type="'+type+'" id="'+id+'" autocomplete="'+auto+'" value="'+esc(val||"")+'" placeholder="'+ph+'"><div class="err" id="e-'+id+'"></div></div>';}
+  app.innerHTML='<div class="narrow"><div><p class="eyebrow">Your account</p><h2>'+(p.name?'Your account':'Create your account')+'</h2></div>'+
+    '<form class="panel" id="f3" novalidate>'+
+    fld('an','Full name','text',p.name,'Your name','name')+
+    fld('ap','Phone number','tel',p.phone,'03XX XXXXXXX','tel')+
+    fld('ae','Gmail','email',p.email,'you@gmail.com','email')+
+    fld('aa','Home address','text',p.address,'House number, street, area, city','street-address')+
+    '<p class="note">Your details are saved only on this phone or computer. Next time you order, they fill in automatically. This is not a password login.</p>'+
+    '<button class="btn block" type="submit">Save account</button>'+
+    (p.name?'<button class="btn ghost block" type="button" id="clr">Remove my saved details</button>':'')+
+    '<div class="err" id="e-sv"></div></form></div>';
+  var f=document.getElementById("f3");
+  f.addEventListener("submit",function(e){
+    e.preventDefault();
+    var v={name:document.getElementById("an").value.trim(),phone:document.getElementById("ap").value.trim(),email:document.getElementById("ae").value.trim(),address:document.getElementById("aa").value.trim()},ok=true;
+    function setE(id,m){document.getElementById(id).textContent=m;if(m)ok=false;}
+    setE("e-an",v.name.length>=2?"":"Enter your name.");
+    setE("e-ap",v.phone.replace(/\D/g,"").length>=10?"":"Enter a valid phone number (at least 10 digits).");
+    setE("e-ae",/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.email)?"":"Enter a valid Gmail address, for example you@gmail.com");
+    setE("e-aa",v.address.length>=10?"":"Enter your full address.");
+    if(!ok)return;
+    if(!setProfile(v)){document.getElementById("e-sv").textContent="Could not save on this device. You can still place orders.";return;}
+    refreshAcc();location.hash="#home";
+  });
+  var c=document.getElementById("clr");
+  if(c)c.onclick=function(){setProfile(null);refreshAcc();viewAccount();};
+}
+
+// ---- Router ----
+function route(){
+  refreshAcc();
+  var h=(location.hash||"#home").slice(1);
+  if(h.indexOf("book-")===0)viewBook(h.slice(5));
+  else if(h==="account")viewAccount();
+  else if(h==="confirm")viewConfirm();
+  else if(h==="done")viewDone();
+  else viewHome();
+  window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+route();
+</script>
+</body>
+</html>
